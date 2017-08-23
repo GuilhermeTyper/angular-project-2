@@ -8,33 +8,43 @@
         <script src="bower_components/angular/angular.js"></script>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <script>
-            angular.module("listaTelefonica",[]);
-            angular.module("listaTelefonica").controller('listaTelefonicaCtrl',function ($scope) {
+            angular.module("listaTelefonica", []);
+            angular.module("listaTelefonica").controller('listaTelefonicaCtrl', function ($scope) {
                 $scope.apps = "Lista Telefonica"
-               $scope.contatos = [
-                   {nome:"Guilherme",telefone:"984277932"},
-                   {nome:"David",telefone:"984277932"},
-                   {nome:"Jeniffer",telefone:"984277932"},
-                   {nome:"Gustavo",telefone:"984277932"}
-               ] 
+                $scope.contatos = [
+                    { nome: "Guilherme", telefone: "984277932" },
+                    { nome: "David", telefone: "984277932" },
+                    { nome: "Jeniffer", telefone: "984277932" },
+                    { nome: "Gustavo", telefone: "984277932" }
+                ]
+
+                $scope.adicionarContato = function() {
+                    $scope.contatos.push();
+                };
             });
         </script>
         <style>
-            .jumbotron{
+            .jumbotron {
                 width: 400px;
                 text-align: center;
                 margin-left: auto;
                 margin-right: auto;
             }
 
-            th{
+            th {
                 text-align: center;
             }
+
+            .form-control{
+                margin-bottom: 5px;
+                
+            }
+
         </style>
     </head>
 
     <body ng-controller="listaTelefonicaCtrl">
-        <div class="jumbotron">
+        <div class="jumbotron container">
             <h3>{{apps}}</h3>
             <table class="table table-striped">
                 <tr>
@@ -47,7 +57,10 @@
                     <td>{{contato.telefone}}</td>
                 </tr>
             </table>
-
+            <hr/>
+            <input class="form-control" type="text" ng-model="nome" placeholder="Nome:"/>{{nome}}
+            <input class="form-control" type="text" ng-model="telefone" placeholder="Telefone:">{{telefone}}
+            <button class="btn btn-success" ng-click="adicionarContato()">Adicionar</button>
         </div>
     </body>
 
