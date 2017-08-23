@@ -20,7 +20,7 @@
 
                 $scope.adicionarContato = function(contato) {
                     $scope.contatos.push(angular.copy(contato));
-                    delete $scope.contato
+                    delete $scope.contato // deletando contato criado
                 };
             });
         </script>
