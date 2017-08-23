@@ -1,0 +1,15 @@
+{
+  "name": "public",
+  "authors": [
+    "guilherme <270210.gui@gmail.com>"
+  ],
+  "description": "angular 1.x.x exemple",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7"
+  }
+}
