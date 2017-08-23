@@ -18,8 +18,9 @@
                     { nome: "Gustavo", telefone: "984277932" }
                 ]
 
-                $scope.adicionarContato = function() {
-                    $scope.contatos.push();
+                $scope.adicionarContato = function(contato) {
+                    $scope.contatos.push(angular.copy(contato));
+                    delete $scope.contato
                 };
             });
         </script>
@@ -58,9 +59,9 @@
                 </tr>
             </table>
             <hr/>
-            <input class="form-control" type="text" ng-model="nome" placeholder="Nome:"/>{{nome}}
-            <input class="form-control" type="text" ng-model="telefone" placeholder="Telefone:">{{telefone}}
-            <button class="btn btn-success" ng-click="adicionarContato()">Adicionar</button>
+            <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome:"/>{{nome}}
+            <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone:">{{telefone}}
+            <button class="btn btn-success btn-block" ng-click="adicionarContato(contato)">Adicionar</button>
         </div>
     </body>
 
