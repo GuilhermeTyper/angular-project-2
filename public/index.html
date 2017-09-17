@@ -16,6 +16,13 @@
                     { nome: "David", telefone: "984277932" },
                     { nome: "Jeniffer", telefone: "984277932" },
                     { nome: "Gustavo", telefone: "984277932" }
+                ];
+
+                $scope.operadoras = [
+                    {nome: "Oi", codigo: 14},
+                    {nome: "Vivo", codigo: 15},
+                    {nome: "Tim", codigo: 41},
+                    {nome: "Claro", codigo: 21},
                 ]
 
                 $scope.adicionarContato = function(contato) {
@@ -61,7 +68,10 @@
             <hr/>
             <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome:"/>{{nome}}
             <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone:">{{telefone}}
-            <button class="btn btn-success btn-block" ng-click="adicionarContato(contato)">Adicionar</button>
+            <select ng-model="contato.operadoras" ng-options="operadora.nome for operadora in operadoras">
+                
+            </select>
+            <button class="btn btn-success btn-block" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar</button>
         </div>
     </body>
 
